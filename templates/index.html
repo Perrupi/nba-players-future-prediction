@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>NBA Players - Investor API</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <div class="container">
+    <div class="login">
+      <h1>NBA Player's Future Prediction</h1>
+      <form action="{{ url_for('predict')}}" method="post">
+        <div class="column">
+          <input type="text" name="GP" placeholder="Games played" required="required" />
+          <input type="text" name="MIN" placeholder="Minutes played" required="required" />
+          <input type="text" name="PTS" placeholder="Points per game" required="required" />
+          <input type="text" name="FGM" placeholder="Field goals made per game" required="required" />
+          <input type="text" name="FGA" placeholder="Field goals attempted per game" required="required" />
+          <input type="text" name="FG%" placeholder="Field goal percentage" required="required" />
+          <input type="text" name="3P Made" placeholder="Three-pointers made per game" required="required" />
+        </div>
+        <div class="column">
+          <input type="text" name="3PA" placeholder="Three-pointers attempted per game" required="required" />
+          <input type="text" name="3P%" placeholder="Three-point percentage" required="required" />
+          <input type="text" name="FTM" placeholder="Free throws made per game" required="required" />
+          <input type="text" name="FTA" placeholder="Free throws attempted per game" required="required" />
+          <input type="text" name="FT%" placeholder="Free throw percentage" required="required" />
+          <input type="text" name="OREB" placeholder="Offensive rebounds per game" required="required" />
+          <input type="text" name="DREB" placeholder="Defensive rebounds per game" required="required" />
+        </div>
+        <div class="column">
+          <input type="text" name="REB" placeholder="Total rebounds per game" required="required" />
+          <input type="text" name="AST" placeholder="Assists per game" required="required" />
+          <input type="text" name="STL" placeholder="Steals per game" required="required" />
+          <input type="text" name="BLK" placeholder="Blocks per game" required="required" />
+          <input type="text" name="TOV" placeholder="Turnovers per game" required="required" />
+          <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </div>
+      </form>
+      <br>
+      <br>
+      {{ prediction_text }}
+    </div>
+  </div>
+</body>
+
+</html>
